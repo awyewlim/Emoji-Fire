@@ -75,21 +75,8 @@ for i in range(len(X_test)):
     if(num != Y_test[i]):
         print('Expected emoji:'+ label_to_emoji(Y_test[i]) + ' prediction: '+ X_test[i] + label_to_emoji(num).strip())
 
-'''
 # Change the sentence below to see your prediction. Make sure all the words are in the Glove embeddings.  
 x_test = np.array(['Phua Jie Si ugly'])
 X_test_indices = sentences_to_indices(x_test, word_to_index, maxLen)
 print(x_test[0] +' '+  label_to_emoji(np.argmax(model.predict(X_test_indices))))
-'''
 
-myInput = input("Please enter a sentence that you want to add emoji to: ")
-while True:
-    if myInput == 'exit':
-        break
-    x = np.array([myInput])
-    x_indices = sentences_to_indices(x, word_to_index, maxLen)
-    print(x[0] +' '+  label_to_emoji(np.argmax(model.predict(x_indices))))
-    print()
-    myInput = input("Please enter a sentence that you want to add emoji to: ")
-
-print('Thank you for using!')
